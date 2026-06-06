@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sunita Bangles — Heritage Imitation Jewellery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --maroon:#7B1E2E;
+  --maroon-dark:#5A1322;
+  --gold:#D4AF37;
+  --gold-light:#E5C760;
+  --cream:#FAF6EE;
+  --ivory:#FFFBF3;
+  --charcoal:#1A1A1A;
+  --gray:#6B6B6B;
+  --green:#2D5016;
+  --white:#fff;
+  --shadow:0 8px 30px rgba(0,0,0,.08);
+  --shadow-lg:0 20px 60px rgba(0,0,0,.15);
+  --radius:14px;
+  --transition:all .35s cubic-bezier(.4,0,.2,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Poppins',sans-serif;
+  color:var(--charcoal);
+  background:var(--ivory);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:-.5px;line-height:1.2}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;font-family:inherit;border:none;background:none}
+
+/* ===== Announcement bar ===== */
+.announcement{
+  background:linear-gradient(90deg,var(--maroon) 0%,var(--maroon-dark) 100%);
+  color:var(--gold-light);
+  text-align:center;
+  padding:10px 20px;
+  font-size:13px;
+  letter-spacing:.5px;
+  font-weight:500;
+}
+.announcement .dot{display:inline-block;width:8px;height:8px;background:#ff3b3b;border-radius:50%;margin-right:8px;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+
+/* ===== Header ===== */
+header{
+  position:sticky;top:0;z-index:100;
+  background:var(--white);
+  border-bottom:1px solid #eee;
+  padding:18px 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  box-shadow:0 2px 20px rgba(0,0,0,.04);
+}
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:26px;font-weight:800;
+  background:linear-gradient(135deg,var(--maroon),var(--gold));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  letter-spacing:.5px;
+}
+.logo span{font-size:11px;font-family:'Poppins',sans-serif;font-weight:500;color:var(--gray);display:block;letter-spacing:3px;margin-top:-4px;-webkit-text-fill-color:var(--gray)}
+nav ul{display:flex;list-style:none;gap:36px}
+nav a{font-size:14px;font-weight:500;color:var(--charcoal);position:relative;padding:6px 0;transition:var(--transition)}
+nav a:hover{color:var(--maroon)}
+nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--gold);transition:var(--transition)}
+nav a:hover::after{width:100%}
+.header-actions{display:flex;align-items:center;gap:18px}
+.icon-btn{width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:var(--cream);border-radius:50%;transition:var(--transition);font-size:18px;position:relative}
+.icon-btn:hover{background:var(--maroon);color:var(--white);transform:translateY(-2px)}
+.cart-badge{position:absolute;top:-2px;right:-2px;background:var(--gold);color:var(--charcoal);font-size:10px;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.whatsapp-btn{background:#25D366;color:var(--white)}
+.whatsapp-btn:hover{background:#1da851}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;
+  min-height:88vh;
+  display:flex;align-items:center;
+  background:linear-gradient(135deg,#FAF6EE 0%,#F0E5D0 100%);
+  overflow:hidden;
+  padding:60px 5%;
+}
+.hero::before{
+  content:'';position:absolute;top:-50%;right:-20%;
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(212,175,55,.15) 0%,transparent 70%);
+  border-radius:50%;
+}
+.hero::after{
+  content:'';position:absolute;bottom:-30%;left:-10%;
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(123,30,46,.1) 0%,transparent 70%);
+  border-radius:50%;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.1fr 1fr;gap:60px;
+  align-items:center;max-width:1400px;margin:0 auto;width:100%;
+  position:relative;z-index:2;
+}
+.hero-content .tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(212,175,55,.15);
+  color:var(--maroon);
+  padding:8px 18px;border-radius:50px;
+  font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+  margin-bottom:24px;
+}
+.hero-content h1{
+  font-size:clamp(40px,5.5vw,68px);
+  margin-bottom:24px;color:var(--charcoal);
+}
+.hero-content h1 em{font-style:italic;color:var(--maroon);font-weight:700}
+.hero-content p{font-size:18px;color:var(--gray);margin-bottom:36px;max-width:520px}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 36px;
+  font-weight:600;font-size:15px;
+  border-radius:50px;
+  transition:var(--transition);
+  letter-spacing:.3px;
+}
+.btn-primary{background:var(--maroon);color:var(--white);box-shadow:0 10px 30px rgba(123,30,46,.3)}
+.btn-primary:hover{background:var(--maroon-dark);transform:translateY(-3px);box-shadow:0 15px 40px rgba(123,30,46,.4)}
+.btn-secondary{background:var(--white);color:var(--charcoal);border:2px solid var(--charcoal)}
+.btn-secondary:hover{background:var(--charcoal);color:var(--white);transform:translateY(-3px)}
+.hero-stats{display:flex;gap:40px;margin-top:48px;padding-top:36px;border-top:1px solid rgba(0,0,0,.1)}
+.stat-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--maroon)}
+.stat-label{font-size:12px;color:var(--gray);text-transform:uppercase;letter-spacing:1.5px;margin-top:4px}
+
+.hero-image-wrap{position:relative;display:flex;align-items:center;justify-content:center}
+.hero-image{
+  width:100%;max-width:520px;aspect-ratio:4/5;
+  border-radius:300px 300px 30px 30px;
+  background:linear-gradient(135deg,var(--maroon) 0%,var(--maroon-dark) 100%);
+  position:relative;overflow:hidden;
+  box-shadow:0 30px 80px rgba(123,30,46,.4);
+  display:flex;align-items:center;justify-content:center;
+}
+.hero-image::before{
+  content:'💎';font-size:180px;opacity:.15;position:absolute;
+}
+.hero-image::after{
+  content:'सुनीता बैंगल्स';
+  font-family:'Noto Sans Devanagari',serif;
+  font-size:42px;font-weight:700;
+  color:var(--gold);text-align:center;
+  position:relative;z-index:2;
+  text-shadow:0 4px 20px rgba(0,0,0,.3);
+}
+.floating-badge{
+  position:absolute;background:var(--white);
+  padding:18px 24px;border-radius:16px;
+  box-shadow:var(--shadow-lg);
+  display:flex;align-items:center;gap:12px;
+  animation:float 3s ease-in-out infinite;
+}
+.floating-badge.top-right{top:30px;right:-20px;animation-delay:0s}
+.floating-badge.bot-left{bottom:60px;left:-30px;animation-delay:1.5s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.floating-badge .icon{width:42px;height:42px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px}
+.floating-badge .text{font-size:13px;font-weight:600}
+.floating-badge .text small{display:block;font-weight:400;color:var(--gray);font-size:11px}
+
+/* ===== Live banner ===== */
+.live-banner{
+  background:linear-gradient(90deg,#1a1a1a 0%,var(--maroon) 100%);
+  color:var(--white);
+  padding:40px 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:24px;
+}
+.live-banner .left{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.live-pill{
+  background:#ff3b3b;color:var(--white);
+  padding:8px 18px;border-radius:50px;
+  font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.live-pill::before{content:'';width:8px;height:8px;background:var(--white);border-radius:50%;animation:pulse 1s infinite}
+.live-banner h3{font-size:24px;font-weight:600}
+.live-banner h3 span{color:var(--gold)}
+.btn-gold{background:var(--gold);color:var(--charcoal)}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-3px)}
+
+/* ===== Sections ===== */
+section{padding:90px 5%}
+.section-header{text-align:center;margin-bottom:60px}
+.section-header .label{
+  color:var(--maroon);font-size:13px;font-weight:600;
+  letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;
+  display:inline-flex;align-items:center;gap:14px;
+}
+.section-header .label::before,
+.section-header .label::after{content:'';width:30px;height:1px;background:var(--gold)}
+.section-header h2{font-size:clamp(32px,4vw,46px);margin-bottom:14px}
+.section-header p{font-size:16px;color:var(--gray);max-width:600px;margin:0 auto}
+
+/* ===== Categories ===== */
+.categories{background:var(--cream)}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1400px;margin:0 auto}
+.cat-card{
+  position:relative;aspect-ratio:1;
+  background:linear-gradient(135deg,var(--maroon) 0%,var(--maroon-dark) 100%);
+  border-radius:var(--radius);
+  display:flex;align-items:flex-end;
+  padding:24px;color:var(--white);
+  overflow:hidden;cursor:pointer;
+  transition:var(--transition);
+  box-shadow:var(--shadow);
+}
+.cat-card:nth-child(2){background:linear-gradient(135deg,#5C3A1A,#3F2810)}
+.cat-card:nth-child(3){background:linear-gradient(135deg,#2D5016,#1E3A0F)}
+.cat-card:nth-child(4){background:linear-gradient(135deg,#B8860B,#8B6914)}
+.cat-card:nth-child(5){background:linear-gradient(135deg,#4A0E4E,#2D0830)}
+.cat-card:nth-child(6){background:linear-gradient(135deg,#1F4E5F,#0E2F3D)}
+.cat-card:nth-child(7){background:linear-gradient(135deg,#8B2C3D,#5C1B26)}
+.cat-card:nth-child(8){background:linear-gradient(135deg,#1A1A1A,#000)}
+.cat-card::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 70% 30%,rgba(212,175,55,.3) 0%,transparent 60%);
+}
+.cat-card .emoji{position:absolute;top:20px;right:24px;font-size:42px;opacity:.85}
+.cat-card h3{font-size:22px;position:relative;z-index:2;margin-bottom:6px}
+.cat-card .count{font-size:13px;opacity:.8;position:relative;z-index:2}
+.cat-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
+.cat-card:hover::before{background:radial-gradient(circle at 70% 30%,rgba(212,175,55,.5) 0%,transparent 60%)}
+
+/* ===== Products ===== */
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;max-width:1400px;margin:0 auto}
+.product-card{
+  background:var(--white);
+  border-radius:var(--radius);
+  overflow:hidden;
+  transition:var(--transition);
+  box-shadow:var(--shadow);
+}
+.product-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-lg)}
+.product-img{
+  aspect-ratio:1;
+  background:linear-gradient(135deg,#F5E6D3,#E8D4B5);
+  position:relative;
+  display:flex;align-items:center;justify-content:center;
+}
+.product-card:nth-child(1) .product-img{background:linear-gradient(135deg,#FDE7E7,#F5C2C2)}
+.product-card:nth-child(2) .product-img{background:linear-gradient(135deg,#E8DFF5,#C9B8E0)}
+.product-card:nth-child(3) .product-img{background:linear-gradient(135deg,#DFEBE6,#A8C5B5)}
+.product-card:nth-child(4) .product-img{background:linear-gradient(135deg,#FDF1D8,#F0D896)}
+.product-img::before{content:'💎';font-size:80px;opacity:.3}
+.badge-tag{
+  position:absolute;top:14px;left:14px;
+  background:var(--maroon);color:var(--white);
+  padding:5px 12px;border-radius:50px;
+  font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+}
+.badge-tag.new{background:var(--green)}
+.badge-tag.live{background:#ff3b3b;animation:pulse 2s infinite}
+.wishlist{
+  position:absolute;top:14px;right:14px;
+  width:38px;height:38px;background:var(--white);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:var(--transition);font-size:18px;
+}
+.wishlist:hover{background:var(--maroon);color:var(--white)}
+.product-info{padding:22px}
+.product-info .cat{font-size:11px;color:var(--gray);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.product-info h3{font-size:18px;margin-bottom:10px;font-family:'Poppins',sans-serif;font-weight:600}
+.stars{color:var(--gold);font-size:13px;margin-bottom:12px}
+.stars .reviews{color:var(--gray);font-size:12px;margin-left:6px}
+.price-row{display:flex;align-items:center;justify-content:space-between}
+.price{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--maroon)}
+.price .old{font-size:14px;color:var(--gray);text-decoration:line-through;margin-left:8px;font-weight:400}
+.add-cart{
+  width:42px;height:42px;background:var(--charcoal);color:var(--white);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:var(--transition);font-size:18px;
+}
+.add-cart:hover{background:var(--maroon);transform:rotate(90deg)}
+
+/* ===== Festive banner ===== */
+.festive{
+  background:linear-gradient(135deg,#2D0F1A 0%,#5A1322 50%,#7B1E2E 100%);
+  color:var(--white);
+  position:relative;overflow:hidden;
+  padding:0;margin:0 5%;border-radius:24px;
+}
+.festive-wrap{
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;
+  padding:80px;gap:50px;
+}
+.festive::before{
+  content:'🪔';position:absolute;font-size:300px;opacity:.06;
+  top:50%;right:5%;transform:translateY(-50%);
+}
+.festive .label{color:var(--gold);font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:18px}
+.festive h2{font-size:48px;line-height:1.1;margin-bottom:20px}
+.festive h2 span{color:var(--gold);font-style:italic}
+.festive p{font-size:16px;opacity:.85;margin-bottom:30px;max-width:480px}
+.festive-image{
+  aspect-ratio:1;
+  background:radial-gradient(circle,var(--gold) 0%,transparent 70%),
+             radial-gradient(circle at 30% 30%,#FFE5A0 0%,transparent 50%);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:200px;
+  box-shadow:0 30px 100px rgba(212,175,55,.3);
+}
+
+/* ===== Trust section ===== */
+.trust{background:var(--cream)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;max-width:1300px;margin:0 auto}
+.trust-card{
+  background:var(--white);
+  padding:36px 24px;text-align:center;
+  border-radius:var(--radius);
+  transition:var(--transition);
+}
+.trust-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.trust-card .icon{
+  width:72px;height:72px;background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  border-radius:50%;margin:0 auto 20px;
+  display:flex;align-items:center;justify-content:center;font-size:32px;
+  box-shadow:0 10px 30px rgba(212,175,55,.3);
+}
+.trust-card h4{font-size:18px;margin-bottom:8px;font-family:'Poppins',sans-serif;font-weight:600}
+.trust-card p{font-size:14px;color:var(--gray)}
+
+/* ===== Sunita section ===== */
+.sunita-section{background:var(--ivory)}
+.sunita-wrap{
+  display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center;
+  max-width:1300px;margin:0 auto;
+}
+.sunita-img{
+  aspect-ratio:4/5;border-radius:24px;
+  background:linear-gradient(135deg,#FDE9C3,#E8C77A);
+  display:flex;align-items:center;justify-content:center;
+  font-size:120px;
+  box-shadow:var(--shadow-lg);
+  position:relative;
+}
+.sunita-img::after{
+  content:'👵🏽';font-size:200px;
+}
+.youtube-badge{
+  position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);
+  background:var(--white);padding:14px 24px;border-radius:50px;
+  box-shadow:var(--shadow);display:flex;align-items:center;gap:10px;
+  font-weight:600;font-size:14px;
+}
+.youtube-badge .yt-icon{background:#ff0000;color:#fff;padding:6px 10px;border-radius:6px;font-size:11px;font-weight:700}
+.sunita-content .label{color:var(--maroon);font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:18px}
+.sunita-content h2{font-size:42px;margin-bottom:24px;line-height:1.2}
+.sunita-content p{font-size:16px;color:var(--gray);margin-bottom:18px;line-height:1.8}
+.sunita-content .quote{
+  font-style:italic;color:var(--maroon);font-family:'Playfair Display',serif;
+  font-size:20px;padding-left:20px;border-left:3px solid var(--gold);
+  margin:24px 0;
+}
+
+/* ===== Testimonials ===== */
+.testimonials{background:linear-gradient(180deg,var(--cream) 0%,var(--ivory) 100%)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;max-width:1300px;margin:0 auto}
+.testi-card{
+  background:var(--white);padding:32px;border-radius:var(--radius);
+  box-shadow:var(--shadow);position:relative;
+}
+.testi-card::before{
+  content:'"';position:absolute;top:10px;right:30px;
+  font-family:'Playfair Display',serif;font-size:90px;color:var(--gold);
+  opacity:.3;line-height:1;
+}
+.testi-card .stars{margin-bottom:18px;font-size:16px}
+.testi-card p{color:var(--charcoal);margin-bottom:24px;font-size:15px;line-height:1.7}
+.testi-user{display:flex;align-items:center;gap:14px}
+.testi-avatar{
+  width:50px;height:50px;border-radius:50%;
+  background:linear-gradient(135deg,var(--maroon),var(--gold));
+  display:flex;align-items:center;justify-content:center;
+  color:var(--white);font-weight:700;font-size:20px;
+}
+.testi-user .name{font-weight:600;font-size:15px}
+.testi-user .city{font-size:12px;color:var(--gray)}
+
+/* ===== Newsletter ===== */
+.newsletter{
+  background:linear-gradient(135deg,var(--charcoal) 0%,#000 100%);
+  color:var(--white);text-align:center;
+}
+.newsletter h2{font-size:42px;margin-bottom:16px}
+.newsletter h2 span{color:var(--gold)}
+.newsletter p{font-size:16px;opacity:.7;margin-bottom:36px;max-width:540px;margin-left:auto;margin-right:auto}
+.news-form{display:flex;gap:12px;max-width:520px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.news-form input{
+  flex:1;min-width:240px;
+  padding:16px 24px;border-radius:50px;border:none;
+  font-family:'Poppins',sans-serif;font-size:15px;
+  background:rgba(255,255,255,.08);color:var(--white);
+  border:1px solid rgba(255,255,255,.15);
+  outline:none;transition:var(--transition);
+}
+.news-form input:focus{border-color:var(--gold);background:rgba(255,255,255,.12)}
+.news-form input::placeholder{color:rgba(255,255,255,.5)}
+
+/* ===== Footer ===== */
+footer{background:#0e0e0e;color:#aaa;padding:80px 5% 30px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:50px;max-width:1300px;margin:0 auto 50px}
+.footer-grid h4{color:var(--white);font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:22px}
+.footer-grid ul{list-style:none}
+.footer-grid li{margin-bottom:12px;font-size:14px}
+.footer-grid a{transition:var(--transition);color:#aaa}
+.footer-grid a:hover{color:var(--gold)}
+.footer-brand .logo-foot{
+  font-family:'Playfair Display',serif;font-size:32px;font-weight:800;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  margin-bottom:12px;
+}
+.footer-brand p{font-size:14px;color:#888;margin-bottom:20px;line-height:1.8}
+.social{display:flex;gap:12px}
+.social a{
+  width:42px;height:42px;background:rgba(255,255,255,.05);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:18px;color:var(--white);
+  transition:var(--transition);
+}
+.social a:hover{background:var(--gold);color:var(--charcoal);transform:translateY(-3px)}
+.contact-info{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px;font-size:14px}
+.contact-info .icon{color:var(--gold);font-size:16px;margin-top:2px}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:30px;text-align:center;font-size:13px;color:#666;
+}
+
+/* ===== Floating WA ===== */
+.float-wa{
+  position:fixed;bottom:30px;right:30px;z-index:99;
+  width:64px;height:64px;background:#25D366;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  color:var(--white);font-size:32px;
+  box-shadow:0 10px 40px rgba(37,211,102,.5);
+  transition:var(--transition);
+  animation:bounce 2s ease-in-out infinite;
+}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.float-wa:hover{transform:scale(1.1);background:#1da851}
+
+/* ===== Responsive ===== */
+@media(max-width:1024px){
+  nav,.hero-stats{display:none}
+  .hero-grid,.sunita-wrap,.festive-wrap{grid-template-columns:1fr;gap:40px}
+  .cat-grid,.products-grid,.trust-grid,.testi-grid,.footer-grid{grid-template-columns:repeat(2,1fr)}
+  .festive{margin:0;border-radius:0}
+  .festive-wrap{padding:60px 5%}
+}
+@media(max-width:600px){
+  section{padding:60px 5%}
+  .hero{min-height:auto;padding:40px 5%}
+  .hero-content h1{font-size:38px}
+  .cat-grid,.products-grid,.trust-grid,.testi-grid,.footer-grid{grid-template-columns:1fr}
+  .live-banner{flex-direction:column;text-align:center}
+  .news-form{flex-direction:column}
+  .news-form input{width:100%}
+  .float-wa{width:54px;height:54px;font-size:26px;bottom:20px;right:20px}
+}
+</style>
+</head>
+<body>
+
+<div class="announcement">
+  <span class="dot"></span>
+  LIVE TONIGHT 8 PM IST · Festive Collection Launch · Watch on YouTube
+</div>
+
+<header>
+  <a href="#" class="logo">
+    Sunita Bangles
+    <span>HERITAGE JEWELLERY</span>
+  </a>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">New Arrivals</a></li>
+      <li><a href="#">Necklaces</a></li>
+      <li><a href="#">Bangles</a></li>
+      <li><a href="#">Bridal</a></li>
+      <li><a href="#">Live Sales</a></li>
+    </ul>
+  </nav>
+  <div class="header-actions">
+    <button class="icon-btn">🔍</button>
+    <button class="icon-btn">♡</button>
+    <button class="icon-btn">🛒<span class="cart-badge">2</span></button>
+    <button class="icon-btn whatsapp-btn">💬</button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <span class="tag">✨ Handcrafted Heritage Collection</span>
+      <h1>Timeless <em>Elegance</em>, Direct from Our Studio</h1>
+      <p>Authentic imitation jewellery handpicked by Sunita Ji herself. From bridal heirlooms to festive everyday wear — crafted with love for the modern Indian woman.</p>
+      <div class="hero-cta">
+        <a href="#" class="btn btn-primary">Shop Collection →</a>
+        <a href="#" class="btn btn-secondary">🔴 Watch Live</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-num">10K+</div><div class="stat-label">Happy Customers</div></div>
+        <div><div class="stat-num">500+</div><div class="stat-label">Unique Designs</div></div>
+        <div><div class="stat-num">All India</div><div class="stat-label">COD Available</div></div>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <div class="hero-image"></div>
+      <div class="floating-badge top-right">
+        <div class="icon">✨</div>
+        <div class="text">New Collection<small>Just Arrived</small></div>
+      </div>
+      <div class="floating-badge bot-left">
+        <div class="icon">⭐</div>
+        <div class="text">4.9 Rating<small>From 2,400+ reviews</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LIVE BANNER ===== -->
+<div class="live-banner">
+  <div class="left">
+    <span class="live-pill">LIVE TODAY</span>
+    <h3>Festive Collection Live Sale — <span>Starts 8 PM IST</span></h3>
+  </div>
+  <a href="#" class="btn btn-gold">Join Live Now →</a>
+</div>
+
+<!-- ===== CATEGORIES ===== -->
+<section class="categories">
+  <div class="section-header">
+    <span class="label">Shop By Category</span>
+    <h2>Discover Our Collections</h2>
+    <p>From traditional heritage to modern statements — find the perfect piece for every occasion</p>
+  </div>
+  <div class="cat-grid">
+    <a href="#" class="cat-card"><span class="emoji">💍</span><h3>Necklaces</h3><span class="count">120+ Designs</span></a>
+    <a href="#" class="cat-card"><span class="emoji">🪯</span><h3>Mangalsutras</h3><span class="count">80+ Designs</span></a>
+    <a href="#" class="cat-card"><span class="emoji">💚</span><h3>Lac Bangles</h3><span class="count">60+ Designs</span></a>
+    <a href="#" class="cat-card"><span class="emoji">✨</span><h3>Earrings</h3><span class="count">90+ Designs</span></a>
+    <a href="#" class="cat-card"><span class="emoji">👰🏽</span><h3>Bridal Sets</h3><span class="count">45+ Designs</span></a>
+    <a href="#" class="cat-card"><span class="emoji">🌺</span><h3>Anklets</h3><span class="count">35+ Designs</span></a>
+    <a href="#" class="cat-card"><span class="emoji">💎</span><h3>Jhumkas</h3><span class="count">70+ Designs</span></a>
+    <a href="#" class="cat-card"><span class="emoji">👑</span><h3>Sets</h3><span class="count">55+ Designs</span></a>
+  </div>
+</section>
+
+<!-- ===== NEW ARRIVALS ===== -->
+<section>
+  <div class="section-header">
+    <span class="label">Just Launched</span>
+    <h2>New Arrivals</h2>
+    <p>Fresh designs straight from our studio — handpicked weekly</p>
+  </div>
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="product-img"><span class="badge-tag new">New</span><span class="wishlist">♡</span></div>
+      <div class="product-info">
+        <div class="cat">NECKLACE</div>
+        <h3>Royal Maroon Haar Set</h3>
+        <div class="stars">★★★★★ <span class="reviews">(124)</span></div>
+        <div class="price-row"><div class="price">₹1,299<span class="old">₹2,199</span></div><div class="add-cart">+</div></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-img"><span class="badge-tag live">Live</span><span class="wishlist">♡</span></div>
+      <div class="product-info">
+        <div class="cat">BANGLES</div>
+        <h3>Traditional Lac Bangle Pair</h3>
+        <div class="stars">★★★★★ <span class="reviews">(89)</span></div>
+        <div class="price-row"><div class="price">₹849<span class="old">₹1,499</span></div><div class="add-cart">+</div></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-img"><span class="badge-tag new">New</span><span class="wishlist">♡</span></div>
+      <div class="product-info">
+        <div class="cat">EARRINGS</div>
+        <h3>Gold-tone Jhumka Set</h3>
+        <div class="stars">★★★★★ <span class="reviews">(212)</span></div>
+        <div class="price-row"><div class="price">₹599<span class="old">₹999</span></div><div class="add-cart">+</div></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-img"><span class="badge-tag">Bestseller</span><span class="wishlist">♡</span></div>
+      <div class="product-info">
+        <div class="cat">BRIDAL SET</div>
+        <h3>Heritage Bridal Necklace</h3>
+        <div class="stars">★★★★★ <span class="reviews">(347)</span></div>
+        <div class="price-row"><div class="price">₹2,499<span class="old">₹3,999</span></div><div class="add-cart">+</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FESTIVE BANNER ===== -->
+<section class="festive">
+  <div class="festive-wrap">
+    <div>
+      <span class="label">🪔 Festive Edit 2026</span>
+      <h2>Karva Chauth & <span>Diwali Specials</span></h2>
+      <p>Curated heritage pieces for the festive season. Limited collection — handcrafted with timeless designs that honor every tradition.</p>
+      <a href="#" class="btn btn-gold">Explore Collection →</a>
+    </div>
+    <div class="festive-image">💎</div>
+  </div>
+</section>
+
+<!-- ===== TRUST ===== -->
+<section class="trust">
+  <div class="section-header">
+    <span class="label">Why Sunita Bangles</span>
+    <h2>Trusted by Thousands Across India</h2>
+  </div>
+  <div class="trust-grid">
+    <div class="trust-card">
+      <div class="icon">🏠</div>
+      <h4>Real Family Business</h4>
+      <p>Run by Sunita Ji herself. Authentic, trustworthy, personal service.</p>
+    </div>
+    <div class="trust-card">
+      <div class="icon">🚚</div>
+      <h4>COD All India</h4>
+      <p>Pay when you receive. Delivered safely to your doorstep.</p>
+    </div>
+    <div class="trust-card">
+      <div class="icon">↩️</div>
+      <h4>7-Day Return</h4>
+      <p>Not satisfied? Easy returns within 7 days. No questions asked.</p>
+    </div>
+    <div class="trust-card">
+      <div class="icon">💬</div>
+      <h4>WhatsApp Support</h4>
+      <p>Chat with Sunita Ji directly. Order, ask, customize — anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SUNITA STORY ===== -->
+<section class="sunita-section">
+  <div class="sunita-wrap">
+    <div class="sunita-img">
+      <div class="youtube-badge"><span class="yt-icon">▶ YouTube</span> 50K+ Subscribers</div>
+    </div>
+    <div class="sunita-content">
+      <span class="label">Meet Sunita Ji</span>
+      <h2>Three Generations of Jewellery Tradition</h2>
+      <p>What started as a small family workshop is now a beloved brand serving thousands of women across India. Every piece is personally selected by Sunita Ji — bringing you authentic designs at honest prices.</p>
+      <div class="quote">"Mere paas har woman ke liye kuch khaas hai — bridal se daily wear tak. Ek bar aao, hamesha ke liye family ban jaoge."</div>
+      <a href="#" class="btn btn-primary">▶ Watch Our Story</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials">
+  <div class="section-header">
+    <span class="label">Customer Love</span>
+    <h2>What Our Family Says</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>Bought 3 sets for my wedding — absolutely loved them! Quality is unmatched and Sunita Ji personally helped me choose. Best decision!</p>
+      <div class="testi-user"><div class="testi-avatar">P</div><div><div class="name">Priya Sharma</div><div class="city">Jaipur</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>I've ordered 6 times now. Every piece feels premium, packaging is gorgeous, and the live sales are so much fun. Totally hooked!</p>
+      <div class="testi-user"><div class="testi-avatar">M</div><div><div class="name">Meera Patel</div><div class="city">Ahmedabad</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>The lac bangles I bought for Karva Chauth were perfect! Got so many compliments. Sunita Bangles is now my go-to for all festivals.</p>
+      <div class="testi-user"><div class="testi-avatar">A</div><div><div class="name">Anjali Kumar</div><div class="city">Delhi</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWSLETTER ===== -->
+<section class="newsletter">
+  <h2>Join the <span>Sunita Bangles</span> Family</h2>
+  <p>Get exclusive access to new collections, live sale alerts, and early bird discounts</p>
+  <form class="news-form">
+    <input type="email" placeholder="Enter your email">
+    <button type="submit" class="btn btn-gold">Subscribe</button>
+  </form>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo-foot">Sunita Bangles</div>
+      <p>Three generations of jewellery tradition. Heritage designs, honest prices, personal service. Welcome to the family.</p>
+      <div class="social">
+        <a href="#">📷</a><a href="#">📺</a><a href="#">📘</a><a href="#">💬</a>
+      </div>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <ul><li><a href="#">New Arrivals</a></li><li><a href="#">Necklaces</a></li><li><a href="#">Bangles</a></li><li><a href="#">Earrings</a></li><li><a href="#">Bridal</a></li></ul>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <ul><li><a href="#">Track Order</a></li><li><a href="#">Returns</a></li><li><a href="#">Shipping</a></li><li><a href="#">FAQ</a></li><li><a href="#">Contact Us</a></li></ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <div class="contact-info"><span class="icon">📞</span><span>+91 98765 43210</span></div>
+      <div class="contact-info"><span class="icon">✉️</span><span>hello@sunitabangles.com</span></div>
+      <div class="contact-info"><span class="icon">📍</span><span>Sunita Bangles Studio, India</span></div>
+      <div class="contact-info"><span class="icon">💬</span><span>WhatsApp Support 9 AM – 9 PM</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Sunita Bangles · All rights reserved · Made with ♡ in India</div>
+</footer>
+
+<a href="#" class="float-wa">💬</a>
+
+</body>
+</html>
